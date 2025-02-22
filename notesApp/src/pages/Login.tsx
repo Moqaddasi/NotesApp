@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import viewIcon from "../assets/viewIcon.png";
+import hideIcon from "../assets/hideIcon.png";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -46,7 +47,11 @@ function Login() {
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute inset-y-0 right-0 flex items-center px-3 text-gray-600"
               >
-                {showPassword ? "🙈" : "👁️"}
+                {showPassword ? (
+                  <img src={viewIcon} alt="View Icon" className="w-5 h-5" />
+                ) : (
+                  <img src={hideIcon} alt="View Icon" className="w-5 h-5" />
+                )}
               </button>
             </div>
           </div>
