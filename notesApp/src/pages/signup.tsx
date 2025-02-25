@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import viewIcon from "../assets/viewIcon.png";
 import hideIcon from "../assets/hideIcon.png";
-function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
+function SignUp() {
+  const [information, setInformation] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle login logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
+    console.log("Email:", information.email);
+    console.log("Password:", information.password);
+    console.log("First Name:", information.firstName);
+    console.log("Last Name:", information.lastName);
   };
 
   return (
@@ -20,12 +27,42 @@ function Login() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">
+              First Name:
+            </label>
+            <input
+              type="text"
+              value={information.firstName}
+              onChange={(e) =>
+                setInformation({ ...information, firstName: e.target.value })
+              }
+              required
+              className="w-full px-3 py-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Last Name:
+            </label>
+            <input
+              type="email"
+              value={information.lastName}
+              onChange={(e) =>
+                setInformation({ ...information, lastName: e.target.value })
+              }
+              required
+              className="w-full px-3 py-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
               Email:
             </label>
             <input
               type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={information.email}
+              onChange={(e) =>
+                setInformation({ ...information, email: e.target.value })
+              }
               required
               className="w-full px-3 py-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
             />
@@ -37,8 +74,10 @@ function Login() {
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={information.password}
+                onChange={(e) =>
+                  setInformation({ ...information, password: e.target.value })
+                }
                 required
                 className="w-full px-3 py-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
               />
@@ -59,22 +98,24 @@ function Login() {
             type="submit"
             className="w-full px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
           >
-            Login
-          </button>
-          <button
-            className="w-full px-4 py-2 text-white bg-blue-200 rounded
-              hover:bg-blue-400 focus:outline-none focus:ring
-              focus:ring-blue-300"
-            onClick={() => {
-              window.location.href = "/signup";
-            }}
-          >
             Sign Up
           </button>
+          <div>
+            <button
+              className="w-full px-4 py-2 text-white bg-blue-200 rounded
+              hover:bg-blue-400 focus:outline-none focus:ring
+              focus:ring-blue-300"
+              onClick={() => {
+                window.location.href = "/login";
+              }}
+            >
+              Login
+            </button>
+          </div>
         </form>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default SignUp;
