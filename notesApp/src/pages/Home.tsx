@@ -4,11 +4,11 @@ export default function LandingPage() {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 to-indigo-600 p-6">
       <div className="text-center max-w-2xl text-white">
         <h1 className="text-5xl font-bold tracking-tight mb-4">
-          Welcome to Our Platform
+          Take Notes, Stay Organized
         </h1>
         <p className="text-lg opacity-80 mb-6">
-          Discover the best way to manage your business efficiently with our
-          modern tools.
+          Capture your thoughts, ideas, and to-dos effortlessly with our smart
+          and intuitive note-taking platform. modern tools.
         </p>
         <img src={NotesBro} alt="Notes" />
         <button
