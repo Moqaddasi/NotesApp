@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import viewIcon from "../assets/viewIcon.png";
 import hideIcon from "../assets/hideIcon.png";
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [information, setInformation] = useState({
+    email: "",
+    password: "",
+  });
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle login logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
+    console.log("Email:", information.email);
+    console.log("Password:", information.password);
   };
 
   return (
@@ -24,8 +26,10 @@ function Login() {
             </label>
             <input
               type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={information.email}
+              onChange={(e) =>
+                setInformation({ ...information, email: e.target.value })
+              }
               required
               className="w-full px-3 py-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
             />
@@ -37,8 +41,10 @@ function Login() {
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={information.password}
+                onChange={(e) =>
+                  setInformation({ ...information, password: e.target.value })
+                }
                 required
                 className="w-full px-3 py-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
               />
