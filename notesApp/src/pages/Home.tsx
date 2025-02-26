@@ -12,7 +12,7 @@ export default function LandingPage() {
         </p>
         <img src={NotesBro} alt="Notes" />
         <button
-          className="w-full px-6 py-3 mt-4 text-blue-500 bg-white border border-purple-600 rounded-lg shadow-md
+          className="w-full px-6 py-3 mt-4 text-blue-500 bg-white border border-blue-600 rounded-lg shadow-md
           hover:bg-blue-100 focus:outline-none focus:ring-2"
           onClick={() => {
             window.location.href = "/signup";
