@@ -1,13 +1,24 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { BarChart, FileText, Menu, Settings, Star } from "lucide-react";
+import { FileText, Home, Menu, Settings, Star } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 const sidebarItems = [
-  { name: "home", icon: BarChart, color: "#10B981", path: "/" },
-  { name: "notes", icon: FileText, color: "#3B82F6", path: "/notes" },
-  { name: "favorites", icon: Star, color: "#F59E0B", path: "/favorites" },
-  { name: "settings", icon: Settings, color: "#6B7280", path: "/settings" },
+  { name: "home", icon: Home, color: "#10B981", href: "/dashboard/home" },
+  { name: "notes", icon: FileText, color: "#3B82F6", href: "/dashboard/notes" },
+  {
+    name: "favorites",
+    icon: Star,
+    color: "#F59E0B",
+    href: "/dashboard/favorites",
+  },
+  {
+    name: "settings",
+    icon: Settings,
+    color: "#6B7280",
+    href: "/dashboard/settings",
+  },
 ];
+
 function Sidebar() {
   const [isShowSidebar, isSetShowSidebar] = useState(false);
   return (
@@ -28,7 +39,7 @@ function Sidebar() {
         </motion.button>
         <nav>
           {sidebarItems.map((item) => (
-            <Link key={item.path} to={item.path}>
+            <Link key={item.href} to={item.href}>
               <motion.div className="flex items-start p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors m-4">
                 <item.icon
                   size={20}

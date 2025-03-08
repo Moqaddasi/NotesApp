@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import Sidebar from "./components/sidebar";
 
 function Dashboard() {
@@ -8,6 +9,7 @@ function Dashboard() {
         <div className="absolute inset-0 backdrop-blur-sm" />
       </div>
       <Sidebar />
+      <Outlet />
     </div>
   );
 }
