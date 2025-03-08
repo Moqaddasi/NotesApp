@@ -18,19 +18,21 @@ function QuickNotes() {
   };
 
   return (
-    <div className="bg-gray-700 shadow-lg rounded-lg p-4">
+    <div className="bg-gray-700 shadow-lg rounded-lg p-4 ">
       <input
-        className="text-lg font-semibold border-b border-gray-500 bg-transparent w-full focus:outline-none"
+        className="text-lg font-semibold border-b border-gray-500 bg-transparent w-full focus:outline-none  "
         placeholder="Quick Notes"
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) =>
+          setInput(e.target.value.length < 27 ? e.target.value : input)
+        }
         onKeyDown={(e) => e.key === "Enter" && addNote()}
       />
       <ul className="mt-4 space-y-2">
         {notes.map((note, index) => (
           <li
             key={index}
-            className="flex justify-between items-center bg-gray-800 p-2 rounded"
+            className="flex justify-between items-center bg-gray-800 p-2 rounded "
           >
             <span className="text-white">{note}</span>
             <button
