@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { FileText, Home, Menu, Settings, Star } from "lucide-react";
+import { FileText, Folder, Home, Menu, Settings, Star } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 const sidebarItems = [
@@ -10,6 +10,12 @@ const sidebarItems = [
     icon: Star,
     color: "#F59E0B",
     href: "/dashboard/favorites",
+  },
+  {
+    name: "category",
+    icon: Folder,
+    color: "#8B5CF6",
+    href: "/dashboard/category",
   },
   {
     name: "settings",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Trash } from "lucide-react";
 
 function QuickNotes() {
@@ -16,6 +16,12 @@ function QuickNotes() {
   const deleteNote = (index: number) => {
     setNotes(notes.filter((_, i) => i !== index));
   };
+
+  useEffect(() => {
+    //call api
+    console.log("call Api", notes);
+    //for list of quick note you can call api to read from quick note category
+  }, [notes]);
 
   return (
     <div className="bg-gray-700 shadow-lg rounded-lg p-4 ">

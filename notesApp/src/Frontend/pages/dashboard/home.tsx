@@ -3,7 +3,7 @@ import Header from "../../components/header";
 import InfoCard from "../../components/InfoCard";
 import { Archive, FileText, Star, Trash } from "lucide-react";
 import QuickNotes from "../../components/quickNotes";
-import NoteOverViewChart from "../../components/noteOverViewChart";
+import CategoryDistribution from "../../components/categoryDistribution";
 
 function Home() {
   return (
@@ -26,9 +26,9 @@ function Home() {
           <InfoCard title="Archived" icon={Archive} color="#EC4899" value="3" />
           <InfoCard title="Trash" icon={Trash} color="#10B981" value="2" />
         </motion.div>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <QuickNotes />
-          <NoteOverViewChart />
+          <CategoryDistribution />
         </div>
       </main>
     </div>
