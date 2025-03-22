@@ -10,16 +10,21 @@ import {
 } from "recharts";
 
 const CategoryDistribute = [
-  { name: "Daily", count: 13 },
-  { name: "Weekly", count: 9 },
-  { name: "Monthly", count: 23 },
-  { name: "Yearly", count: 10 },
-  { name: "Favorites", count: 3 },
-  { name: "Archived", count: 7 },
-  { name: "Quick", count: 44 },
-  { name: "Work", count: 15 },
+  { name: "Jan", count: 13 },
+  { name: "Feb", count: 9 },
+  { name: "Mar", count: 23 },
+  { name: "Apr", count: 10 },
+  { name: "May", count: 3 },
+  { name: "Jun", count: 7 },
+  { name: "Jul", count: 44 },
+  { name: "Aug", count: 15 },
+  { name: "Sep", count: 23 },
+  { name: "Oct", count: 12 },
+  { name: "Nov", count: 4 },
+  { name: "Dec", count: 6 },
 ];
-function CategoryDistribution() {
+
+function MonthlyDistribution() {
   return (
     <motion.div
       className="bg-gray-800 bg-opacity-80 backdrop-blur-md shadow-lg rounded-xl border border-gray-700"
@@ -28,7 +33,7 @@ function CategoryDistribution() {
       transition={{ duration: 0.2 }}
     >
       <h2 className="text-lg font-medium mb-4 text-gray-100">
-        CategoryDistribution
+        Monthly Distribution
       </h2>
       <div className="h-80">
         <ResponsiveContainer width={"100%"} height={"100%"}>
@@ -62,4 +67,4 @@ function CategoryDistribution() {
     </motion.div>
   );
 }
-export default CategoryDistribution;
+export default MonthlyDistribution;

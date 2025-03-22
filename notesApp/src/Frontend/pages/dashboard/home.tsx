@@ -3,7 +3,8 @@ import Header from "../../components/header";
 import InfoCard from "../../components/InfoCard";
 import { Archive, FileText, Star, Trash } from "lucide-react";
 import QuickNotes from "../../components/quickNotes";
-import CategoryDistribution from "../../components/categoryDistribution";
+import MonthlyDistribution from "../../components/categoryDistribution";
+import CategoryDistributionChart from "../../components/categoryDistributionChart";
 
 function Home() {
   return (
@@ -28,7 +29,8 @@ function Home() {
         </motion.div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <QuickNotes />
-          <CategoryDistribution />
+          <MonthlyDistribution />
+          <CategoryDistributionChart />
         </div>
       </main>
     </div>
